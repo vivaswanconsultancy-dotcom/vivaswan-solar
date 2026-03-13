@@ -434,17 +434,18 @@ document.getElementById("pumpResult").innerText="Estimated Subsidy ₹"+subsidy;
 <script>
 
 function googleTranslateElementInit() {
-new google.translate.TranslateElement(
-{pageLanguage: 'en'},
-'google_translate_element'
-);
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en',
+      includedLanguages: 'en,te,hi'
+    },
+    'google_translate_element'
+  );
 }
-
 </script>
 
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-
+<a href="blog.html">Solar Blogs</a>
 </body>
 </html>
-<a href="blog.html">Solar Blogs</a>
