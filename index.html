@@ -158,23 +158,20 @@ text-decoration:none;
 </div>
 
 <nav>
-
 <a href="#home">Home</a>
 <a href="#about">About</a>
 <a href="#services">Services</a>
 <a href="#schemes">Schemes</a>
 <a href="#solarcalc">Solar Calculator</a>
-<a href="#billupload">Bill Analysis</a>
 <a href="#income">Plant Income</a>
-<a href="#investor">Investor ROI</a>
 <a href="#subsidy">Subsidy</a>
 <a href="#pump">Solar Pump</a>
-<a href="#farmerprofit">Farmer Profit</a>
 <a href="#gallery">Gallery</a>
 <a href="#lead">Consultation</a>
 <a href="#contact">Contact</a>
-
 </nav>
+
+<div id="google_translate_element"></div>
 
 </header>
 
@@ -196,7 +193,7 @@ text-decoration:none;
 
 <p><strong>Vivaswan Solar Consultancy</strong> provides independent solar advisory services helping homeowners, businesses and farmers adopt solar energy with proper guidance.</p>
 
-<p>We guide clients in solar system design, subsidy schemes, solar pumps, and solar plant investments.</p>
+<p>We guide clients in solar system design, subsidy schemes, solar pumps and solar plant investments.</p>
 
 </section>
 
@@ -285,25 +282,6 @@ text-decoration:none;
 </section>
 
 
-<section id="billupload">
-
-<h2>Upload Electricity Bill for Free Analysis</h2>
-
-<div class="card">
-
-<input type="file">
-
-<p>Upload your electricity bill and we will recommend the best solar system.</p>
-
-<a class="btn" href="https://forms.gle/Zd5cjWSr7M3h7FdZA" target="_blank">
-Submit Bill Details
-</a>
-
-</div>
-
-</section>
-
-
 <section id="income">
 
 <h2>Solar Plant Income Calculator</h2>
@@ -311,30 +289,11 @@ Submit Bill Details
 <div class="card">
 
 <input type="number" id="plantkw" placeholder="Plant Size (KW)">
-
 <input type="number" id="tariff" placeholder="Tariff per Unit ₹">
 
 <button class="btn" onclick="plantIncome()">Calculate Income</button>
 
 <p id="incomeResult"></p>
-
-</div>
-
-</section>
-
-
-<section id="investor">
-
-<h2>Solar Investor ROI Calculator</h2>
-
-<div class="card">
-
-<input type="number" id="mw" placeholder="Plant Size (MW)">
-<input type="number" id="rate" placeholder="Tariff per Unit ₹">
-
-<button class="btn" onclick="roiCalc()">Calculate ROI</button>
-
-<p id="roiResult"></p>
 
 </div>
 
@@ -374,24 +333,6 @@ Submit Bill Details
 <button class="btn" onclick="pumpCalc()">Estimate</button>
 
 <p id="pumpResult"></p>
-
-</div>
-
-</section>
-
-
-<section id="farmerprofit">
-
-<h2>Farmer Solar Plant Profit Simulator</h2>
-
-<div class="card">
-
-<input type="number" id="farmkw" placeholder="Solar Plant Capacity (KW)">
-<input type="number" id="farmrate" placeholder="Power Sale Rate ₹">
-
-<button class="btn" onclick="farmerCalc()">Calculate</button>
-
-<p id="farmResult"></p>
 
 </div>
 
@@ -487,23 +428,22 @@ let subsidy=hp*40000;
 document.getElementById("pumpResult").innerText="Estimated Subsidy ₹"+subsidy;
 }
 
-function roiCalc(){
-let mw=document.getElementById("mw").value;
-let rate=document.getElementById("rate").value;
-let units=mw*1000*4*365;
-let income=units*rate;
-document.getElementById("roiResult").innerText="Estimated Annual Income ₹"+income;
-}
+</script>
 
-function farmerCalc(){
-let kw=document.getElementById("farmkw").value;
-let rate=document.getElementById("farmrate").value;
-let units=kw*4*365;
-let income=units*rate;
-document.getElementById("farmResult").innerText="Estimated Yearly Income ₹"+income;
+
+<script>
+
+function googleTranslateElementInit() {
+new google.translate.TranslateElement(
+{pageLanguage: 'en'},
+'google_translate_element'
+);
 }
 
 </script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 
 </body>
 </html>
